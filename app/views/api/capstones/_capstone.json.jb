@@ -1,4 +1,5 @@
 {
+  id: capstone.id,
   name: capstone.name,
   description: capstone.description,
   url: capstone.url,
