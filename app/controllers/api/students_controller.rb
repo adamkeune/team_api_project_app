@@ -24,9 +24,11 @@ class Api::StudentsController < ApplicationController
       photo_url: params["photo"],
     })
 
-    @student.save
-
-    render "show.json.jb"
+    if @student.save
+      render "show.json.jb"
+    else
+      render json: { errors: @student.errors.full_messages }, status: 422
+    end
   end
 
   def update
@@ -43,9 +45,11 @@ class Api::StudentsController < ApplicationController
     @student.github_url = params["gitHub"] || @student.github_url
     @student.photo_url = params["photo"] || @student.photo_url
 
-    @student.save
-
-    render "show.json.jb"
+    if @student.save
+      render "show.json.jb"
+    else
+      render json: { errors: @student.errors.full_messages }, status: 422
+    end
   end
 
   def destroy
