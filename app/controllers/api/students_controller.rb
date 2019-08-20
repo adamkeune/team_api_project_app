@@ -8,4 +8,11 @@ class Api::StudentsController < ApplicationController
     @student = Student.find_by(id: params["id"])
     render "show.json.jb"
   end
+
+  def create
+    @student = Student.create({
+      first_name: params["firstName"],
+      last_name: params["lastName"],
+    })
+  end
 end
