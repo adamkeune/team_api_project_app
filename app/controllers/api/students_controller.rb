@@ -13,6 +13,23 @@ class Api::StudentsController < ApplicationController
     @student = Student.create({
       first_name: params["firstName"],
       last_name: params["lastName"],
+      email: params["email"],
+      phone_number: params["phoneNumber"],
+      short_bio: params["bio"],
+      linkedin_url: params["linkedinURL"],
+      twitter_handle: params["twitterHandle"],
+      personal_url: params["blog"],
+      resume_url: params["resumeURL"],
+      github_url: params["gitHub"],
+      photo_url: params["photo"],
+      experiences: params["experience"],
+      educations: params["education"],
+      skills: params["skills"],
+      capstones: params["capstone"],
     })
+
+    @student.save
+
+    render "show.json.jb"
   end
 end
