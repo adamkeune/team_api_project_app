@@ -10,7 +10,7 @@ class Api::StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.create({
+    @student = Student.new({
       first_name: params["firstName"],
       last_name: params["lastName"],
       email: params["email"],
@@ -22,10 +22,6 @@ class Api::StudentsController < ApplicationController
       resume_url: params["resumeURL"],
       github_url: params["gitHub"],
       photo_url: params["photo"],
-      experiences: params["experience"],
-      educations: params["education"],
-      skills: params["skills"],
-      capstones: params["capstone"],
     })
 
     @student.save
