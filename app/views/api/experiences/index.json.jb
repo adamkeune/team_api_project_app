@@ -1,0 +1,4 @@
+
+@experiences.map do |experience|
+  render partial: "experience.json.jb", locals: { experience: experience }
+end
