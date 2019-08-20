@@ -1,0 +1,3 @@
+@capstones.map do |event|
+  render partial: "capstone.json.jb", locals: { capstone: capstone }
+end
