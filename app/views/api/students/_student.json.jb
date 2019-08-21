@@ -2,6 +2,7 @@
   id: student.id,
   first_name: student.first_name,
   last_name: student.last_name,
+  full_name: student.full_name,
   email: student.email,
   phone_number: student.phone_number,
   short_bio: student.short_bio,
