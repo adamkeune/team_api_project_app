@@ -33,8 +33,11 @@
     @education.university_name = params["universityName"] || @education.university_name
     @education.details = params["details"] || @education.details
     @education.student_id = params["studentId"] || @education.student_id
-    @education.save
-    render "show.json.jb"
+    if @education.save
+      render "show.json.jb"
+    else
+      render json: { errors: @education.errors.full_messages }, status: 422
+    end
   end
 
   def destroy
